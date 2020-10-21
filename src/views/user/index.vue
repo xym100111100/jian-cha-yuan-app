@@ -35,13 +35,21 @@
         <div class="jcy-page-main-list-item_text">工资条</div>
         <div class="jcy-page-main-list-item-edit_icon"></div>
       </div>
-      <div class="jcy-page-footer_btn">退出登录</div>
+      <div class="jcy-page-footer_btn" @click="goPage('/login')">退出登录</div>
     </main>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "user",
+  methods: {
+    goPage(url) {
+      // 切记子主路由切换的时候使用replace
+      this.$router.replace(url);
+    },
+  },
+};
 </script>
 
 <style scoped >
@@ -105,7 +113,7 @@ export default {};
 .jcy-page-main-list-item_icon3 {
   height: 0.6rem;
   width: 0.6rem;
-  margin-right:0.34rem ;
+  margin-right: 0.34rem;
 }
 
 .jcy-page-main-list-item_icon1 {
@@ -153,7 +161,7 @@ export default {};
   margin: 1.36rem auto 0;
 }
 
-.jcy-page-footer_btn:active{
+.jcy-page-footer_btn:active {
   background: rgba(225, 225, 225, 0.5);
 }
 </style>
