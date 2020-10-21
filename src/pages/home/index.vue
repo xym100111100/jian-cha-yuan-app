@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="jcy-page-main-item">
-        <div class="jcy-page-main-item-icon jcy-page-main-item-icon-1"></div>
+        <div class="jcy-page-main-item-icon jcy-page-main-item-icon-2"></div>
         <div class="jcy-page-main-item-content">
           <div>请假通知</div>
           <div class="jcy-page-main-item-content-detail">
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="jcy-page-main-item">
-        <div class="jcy-page-main-item-icon jcy-page-main-item-icon-1"></div>
+        <div class="jcy-page-main-item-icon jcy-page-main-item-icon-3"></div>
         <div class="jcy-page-main-item-content">
           <div>会议公告</div>
           <div class="jcy-page-main-item-content-detail">
@@ -52,11 +52,14 @@
         </div>
       </div>
       <div class="jcy-page-main-item">
-        <div class="jcy-page-main-item-icon jcy-page-main-item-icon-1"></div>
+        <div class="jcy-page-main-item-icon jcy-page-main-item-icon-4"></div>
         <div class="jcy-page-main-item-content">
           <div>外出公告</div>
           <div class="jcy-page-main-item-content-detail">
-            <span></span><i> 政治科张与宁外出SDK包括该方式都不敢看房读书报告开发板上课水底纳瓜开发你得空公告</i>
+            <span></span
+            ><i>
+              政治科张与宁外出SDK包括该方式都不敢看房读书报告开发板上课水底纳瓜开发你得空公告</i
+            >
           </div>
         </div>
         <div class="jcy-page-main-item-right">
@@ -71,20 +74,22 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .jcy-page {
   width: 100vw;
   height: 100vh;
   background: #ffffff;
-  margin-bottom: 0.96rem;
   background-image: url("../../assets/images/index-banner@2x.png");
   background-size: 100%;
   background-repeat: no-repeat;
-  padding-top: 2.76rem;
   font-family: PingFangSC-Medium, PingFang SC;
+  border-top: 1px solid rgba(255, 255, 255, 0);
+  box-sizing: border-box;
+  background-origin: border-box;
 }
 
 .jcy-page-header {
+  margin-top: 1rem;
   width: 6.76rem;
   height: 1.92rem;
   background: #ffffff;
@@ -92,6 +97,7 @@ export default {};
   justify-content: space-around;
   font-size: 0.28rem;
   margin: 0 auto;
+  margin-top: 2.6rem;
   color: #333333;
   box-shadow: 2px 2px 12px 4px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
@@ -107,7 +113,7 @@ export default {};
   width: 1rem;
   height: 1rem;
   border-radius: 100%;
-  margin: 0.22rem 0 0.1rem 0;
+  margin: 0.22rem auto 0.1rem ;
 }
 
 .jcy-page-header-item-1 {
@@ -158,7 +164,6 @@ export default {};
   display: flex;
   align-items: center;
   margin-top: 0.1rem;
-
 }
 
 .jcy-page-main-item-content-detail span,
@@ -168,9 +173,9 @@ export default {};
   color: #666666;
   width: 4rem;
 
-  white-space:nowrap; 
-  overflow:hidden; 
-  text-overflow:ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .jcy-page-main-item-content-detail span {
@@ -183,6 +188,19 @@ export default {};
 
 .jcy-page-main-item-icon-1 {
   background-image: url("../../assets/images/fang-jia-tong-zhi@2x.png");
+  background-size: 100%;
+}
+
+.jcy-page-main-item-icon-2 {
+  background-image: url("../../assets/images/qing-jia-tong-zhi@2x.png");
+  background-size: 100%;
+}
+.jcy-page-main-item-icon-3 {
+  background-image: url("../../assets/images/hui-yi-gong-gao@2x.png");
+  background-size: 100%;
+}
+.jcy-page-main-item-icon-4 {
+  background-image: url("../../assets/images/wai-chu-gong-gao@2x.png");
   background-size: 100%;
 }
 

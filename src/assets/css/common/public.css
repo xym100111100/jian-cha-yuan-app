@@ -4,7 +4,8 @@
 }
 html{font-size:13.33333333vw}
 html,body{
-    font-family: Arial;
+    
+    font-family: PingFangSC-Regular, PingFang SC;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color:#EFEFEF;
