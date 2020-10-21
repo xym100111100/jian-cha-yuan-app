@@ -11,7 +11,7 @@
         <ul>
           <li v-for="(item2, index2) in item.data" :key="index2">
             <div
-              class="jcy-page-content-item-content-icon"
+              class="jcy-page-content-item-content_icon"
               :style="{ backgroundImage: 'url(' + item2.icon + ')' }"
             ></div>
             <div>{{ item2.text }}</div>
@@ -209,8 +209,11 @@ export default {
   text-align: center;
   color: #333333;
 }
+.jcy-page li:active{
+  background: rgba(225, 225, 225, 0.5);
+}
 
-.jcy-page-content-item-content-icon {
+.jcy-page-content-item-content_icon {
   height: 0.48rem;
   width: 0.48rem;
   margin: 0.2rem auto;
