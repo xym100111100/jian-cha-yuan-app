@@ -9,12 +9,16 @@
       </div>
       <div class="jcy-page-main-user">
         <div class="jcy-page-main-user-icon-2"></div>
-        <div>
+        <div class="jcy-page-main-user-pwd">
           <input placeholder="请输入密码" type="text" />
         </div>
+        <div class="jcy-page-main-user-pwd_icon"></div>
       </div>
-      <div class="jcy-page-main-pwd">
-        <div>记住密码</div>
+      <div class="jcy-page-main-pwd-edit">
+        <div class="jcy-page-main-pwd-remember">
+          <div></div>
+          <div>记住密码</div>
+        </div>
         <div>忘记密码？</div>
       </div>
       <div class="jcy-page-main-btn" @click="goPage('/')">登录</div>
@@ -40,7 +44,7 @@ export default {
 .jcy-page {
   width: 100vw;
   height: 100vh;
-  background-image: url("../../assets/images/deng-lu-ye@2x.png");
+  background: url("../../assets/images/deng-lu-ye@2x.png") white;
   background-size: 100%;
   background-repeat: no-repeat;
   border-top: 1px solid rgba(255, 255, 255, 0);
@@ -81,18 +85,48 @@ export default {
   background-image: url("../../assets/images/mi-ma@2x.png");
 }
 
-.jcy-page-main-pwd {
+.jcy-page-main-user-pwd {
+  flex-grow: 1;
+}
+
+.jcy-page-main-user-pwd_icon {
+  width: 1rem;
+  height: 100%;
+  background-image: url("../../assets/images/yan-jing@2x.png");
+  background-size: 0.32rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.jcy-page-main-pwd-edit {
   display: flex;
   width: 6.5rem;
   justify-content: space-between;
   margin: 0.16rem auto 0;
 }
-.jcy-page-main-pwd div:nth-child(1) {
-  color: #666666;
-}
-.jcy-page-main-pwd div:nth-child(2) {
+
+.jcy-page-main-pwd-edit div:nth-child(2) {
   color: #2a6cae;
 }
+
+.jcy-page-main-pwd-remember {
+  display: flex;
+  align-items: center;
+  height: 0.5rem;
+  line-height: 0.5rem;
+}
+.jcy-page-main-pwd-remember div:nth-child(1) {
+  height: 0.28rem;
+  width: 0.28rem;
+  border: solid 1px #dedede;
+  margin-right: 0.06rem;
+  border-radius: 2px;
+}
+
+.jcy-page-main-pwd-remember div:nth-child(2) {
+  color: #666666;
+}
+
 .jcy-page-main-btn {
   width: 6.3rem;
   height: 0.8rem;
