@@ -4,16 +4,27 @@
       <div class="jcy-page-main-user">
         <div class="jcy-page-main-user-icon-1"></div>
         <div>
-          <input placeholder="请输入用户名" type="text" />
+          <input v-model="username" placeholder="请输入用户名" type="text" />
         </div>
       </div>
       <div class="jcy-page-main-user">
         <div class="jcy-page-main-user-icon-2"></div>
         <div class="jcy-page-main-user-pwd">
-          <input placeholder="请输入密码" type="text" />
+          <input v-model="password" placeholder="请输入密码" type="text" />
         </div>
         <div class="jcy-page-main-user-pwd_icon"></div>
       </div>
+
+      <div class="jcy-page-main-user">
+        <div class="jcy-page-main-user-pwd">
+          <input v-model="code" placeholder="请输入验证码" type="text" />
+        </div>
+        <div @click="captchaImage" class="jcy-page-main-user_code"  >
+          <img height="80%" width="80%" :src="imgCode" alt="" />
+        </div>
+        
+      </div>
+
       <div class="jcy-page-main-pwd-edit">
         <div class="jcy-page-main-pwd-remember">
           <div></div>
@@ -21,17 +32,48 @@
         </div>
         <div>忘记密码？</div>
       </div>
-      <div class="jcy-page-main-btn" @click="goPage('/')">登录</div>
+      <div class="jcy-page-main-btn" @click="userLogin">登录</div>
     </main>
   </div>
 </template>
 
 <script>
-import { loginData } from "@/api/user";
+import { loginData, captchaImageData } from "@/api/user";
+import img from "../../assets/images/wen-hao.png";
 export default {
   name: "login",
+  data() {
+    return {
+      username: "",
+      password: "",
+      code: "",
+      uuid: "",
+      imgCode: '',
+      
+    };
+  },
+  created(){
+      // 进来就开始请求验证码
+      this.captchaImage()
+  },
   methods: {
-    userLogin() {},
+    userLogin() {
+      loginData({
+        username: this.username,
+        password: this.password,
+        code: this.code,
+        uuid: this.uuid,
+      }).then((res) => {
+        console.log(res);
+        this.$router.replace("/");
+      });
+    },
+    captchaImage() {
+      console.log('sss')
+      // captchaImageData().then((res) => {
+      //   console.log(res);
+      // });
+    },
     goPage(url) {
       // 切记子主路由切换的时候使用replace
       this.$router.replace(url);
@@ -127,6 +169,29 @@ export default {
   color: #666666;
 }
 
+.jcy-page-main-user-code_input {
+  width: 3.2rem;
+}
+.jcy-page-main-user_code {
+  width: 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.jcy-page-main-user-code_btn {
+  height: 0.48rem;
+  width: 1.68rem;
+  border: 1px solid #3787f1;
+  border-radius: 36px;
+  line-height: 0.48rem;
+  text-align: center;
+  color: #3787f1;
+}
+
+.jcy-page-main-user-code_btn:active{
+  background: rgba(225, 225, 225, 0.5);
+}
 .jcy-page-main-btn {
   width: 6.3rem;
   height: 0.8rem;
